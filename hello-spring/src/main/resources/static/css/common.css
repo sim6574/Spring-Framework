@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+div.grid > div.btn-group {
+    grid-column: 1 / -1;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.left-align {
+    text-align: left;
+}
+
+label {
+    padding-left: 10px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 100%;
+}
+
+button, input, textarea {
+    padding: 10px;
+    border: 1px solid #CCC;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+button:focus, input:focus, textarea:focus {
+    outline: none;
+}
+
+a:active, a:hover, a:visited, a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+table.table {
+    border-collapse: collapse;
+    border: 1px solid #DDD;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table.table > thead > tr {
+    background-color:  #FFF;
+}
+
+table.table > thead th {
+    padding: 10px;
+    color: #333;
+}
+
+table.table th, table.table td {
+    border-right: 1px solid #F0F0F0;
+}
+
+table.table th:last-child, table.table td:last-child {
+    border-right: none;
+}
+
+table.table > tbody tr:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+
+table.table > tbody tr:hover {
+    background-color:  #FAFAFA;
+}
+
+table.table > tbody td {
+    padding: 10px;
+    color: #333;
+}
+
+table.table > tbody td[colspan] {
+    text-align: center;
+}
+
+ul.horizontal-list {
+    padding: 0;
+    margin: 0;
+}
+
+ul.horizontal-list li {
+    display: inline;
+}
