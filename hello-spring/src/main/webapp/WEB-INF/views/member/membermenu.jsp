@@ -15,7 +15,7 @@
             <c:otherwise>
                 <li style="margin-right: 1rem;">
                     ${sessionScope._LOGIN_USER_.name}
-                    (${sessionScope._LOGIN_USER_.email})
+                    (<span id="login-email">${sessionScope._LOGIN_USER_.email}</span>)
                 </li>
                 <li>
                     <a href="/member/logout">로그아웃</a>

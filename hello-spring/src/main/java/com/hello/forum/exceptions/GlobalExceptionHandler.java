@@ -1,5 +1,7 @@
 package com.hello.forum.exceptions;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.google.gson.Gson;
+import com.hello.forum.bbs.web.BoardController;
 import com.hello.forum.utils.AjaxResponse;
 import com.hello.forum.utils.RequestUtil;
 
@@ -18,6 +21,8 @@ import jakarta.servlet.http.HttpServletRequest;
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
+	
+	private Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	/**
 	 * PageNotFoundException이 발생했을 때, 동작하는 메소드
@@ -27,6 +32,8 @@ public class GlobalExceptionHandler {
 	 */
 	@ExceptionHandler(PageNotFoundException.class)
 	public Object viewPageNotFoundPage(PageNotFoundException pnfe, Model model) {
+		
+		logger.error(pnfe.getMessage(), pnfe);
 		
 		HttpServletRequest request = RequestUtil.getRequest();
 		String uri = request.getRequestURI();
@@ -51,6 +58,8 @@ public class GlobalExceptionHandler {
 					   AlreadyUseException.class, UserIdendifyNotMatchException.class, 
 					   RuntimeException.class})
 	public Object viewErrorPage(RuntimeException re, Model model) {
+		
+		logger.error(re.getMessage(), re);
 		
 		HttpServletRequest request = RequestUtil.getRequest();
 		String uri = request.getRequestURI();
